@@ -7,17 +7,7 @@ This is a light framework that interfaces with gallery to read art-root files.  
 
 This framework tries to help with that.  It interfaces with gallery to provide a larlite-style interface.  You write classes that extend from ana_base.h, just like in larlite.  Instead of receiving storage_manager, you receive gallery::Event.  You still have access to a lot of tools from larlite like GeometryHelper and LArUtils in general.
 
-
-## TITUS Event Display
-
-This framework contains TITUS: the event display for SBND at Fermilab. TITUS allows to visualize both raw and reconstructed data in 2D and 3D from the all the detectors in SBN program: SBND, MicroBooNE and ICARUS.
-
-### TITUS for SBND
-![Example of event display for SBND](docs/evd-sbnd.jpeg)
-
-### TITUS for ICARUS
-![Example of event display for ICARUS](docs/evd-icarus.jpeg)
-![Example of event display for ICARUS](docs/evd.jpeg)
+NOTE: This forked repo includes files to convert larsoft-root files to larcv (hdf5) files for the MicroBooNE experiment. For details about the TITUS event display see the original repo: https://github.com/TITUS-EVD/gallery-framework. 
 
 
 ## Requirements
@@ -43,17 +33,3 @@ This framework contains TITUS: the event display for SBND at Fermilab. TITUS all
 3) make from the top area: `make -j`
 
 4) Develop in the user dev area.
-
-
-## How to build and run the event display
-
-
-1) Make sure the framework is built.
-
-2) Source the setup script: `source UserDev/EventDisplay/setup_evd.sh`
-
-3) make from the UserDev/EventDisplay/ area: `make -j`
-
-4) Run with `evd.py /path/to/art-root-file.root`. Add option `-s` to use the SBND geometry. Add option `-i` to use the ICARUS geometry.
-
-If you have already built the evd, you can set it up by simply running `source config/setup_evd.sh`
