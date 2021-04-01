@@ -11,6 +11,6 @@
 
 #pragma link C++ class supera::supera_light+;
 #pragma link C++ class supera::SuperaModuleBase+;
-#pragma link C++ class supera::SBNDRawDigit+;
+#pragma link C++ class supera::ubooneRawDigit+;
 //ADD_NEW_CLASS ... do not change this line
 #endif

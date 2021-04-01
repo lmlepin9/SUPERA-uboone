@@ -22,9 +22,9 @@
 #include "Analysis/ana_base.h"
 
 #include "supera_module_base.h"
-#include "sbnd_rawdigit.h"
-#include "sbnd_wire.h"
-#include "sbnd_cluster.h"
+#include "uboone_rawdigit.h"
+#include "uboone_wire.h"
+#include "uboone_cluster.h"
 
 namespace supera {
 
@@ -67,9 +67,9 @@ class supera_light : galleryfmwk::ana_base {
   int column(int channel);
   int row(int tick, int channel);
 
-  SBNDRawDigit raw_digit;
-  SBNDWire     wire;
-  SBNDCluster  cluster;
+  ubooneRawDigit raw_digit;
+  ubooneWire     wire;
+  ubooneCluster  cluster;
   // std::vector<SuperaModuleBase*> _modules;
 
   larcv3::IOManager _io;
