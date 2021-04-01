@@ -74,11 +74,17 @@ protected:
     int row(int tick, int channel);
     float wire_position(float x, float y, float z, int projection_id);
     float tick_position(float x, float time_offset, int projection_id);
-
+ 
+    /*
     int n_ticks_per_chamber = 2500;
     int n_cathode_ticks = 110;
     int compression = 5;
-    int tick_offset = 2500;
+    int tick_offset = 2500;*/ 
+
+    int n_ticks_per_chamber =  7000;
+    int n_cathode_ticks = 0; // This only applies to SBND 
+    int compression = 1;
+    int tick_offset = 2400;
 
     int total_ticks = -1;
 
@@ -86,7 +92,7 @@ protected:
 
     std::string _name;
 
-    std::string _fcl_file_name = "/home/cadams/Theta/SBND/gallery-framework/core/LArUtil/dat/services_sbnd.fcl";
+    std::string _fcl_file_name = "/uboone/app/users/lmoralep/gallery/gallery-framework/core/LArUtil/dat/services_microboone.fcl";
 
     std::vector<larcv3::ImageMeta2D> _base_image_meta_2D;
     larcv3::ImageMeta3D _base_image_meta_3D;

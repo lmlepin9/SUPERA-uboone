@@ -24,8 +24,9 @@ void SBNDWire::slice(gallery::Event* ev, larcv3::IOManager & io) {
   // We will need image2D meta for each plane,
 
   // Get the raw digit data:
-  std::string _wire_producer = "caldata";
-  art::InputTag digit_tag(_wire_producer);
+  std::string _wire_producer = "simnfspl1";
+  std::string _wire_instance = "gauss";
+  art::InputTag digit_tag(_wire_producer,_wire_instance);
   auto const& wires =
     ev -> getValidHandle<std::vector<recob::Wire> >(digit_tag);
 

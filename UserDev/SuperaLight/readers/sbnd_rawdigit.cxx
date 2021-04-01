@@ -24,8 +24,9 @@ void SBNDRawDigit::slice(gallery::Event* ev, larcv3::IOManager & io) {
   // We will need image2D meta for each plane,
 
   // Get the raw digit data:
-  std::string _digit_producer = "daq";
-  art::InputTag digit_tag(_digit_producer);
+  std::string _digit_producer = "driftWC";
+  std::string _digit_instance = "orig";
+  art::InputTag digit_tag(_digit_producer,_digit_instance);
   auto const& raw_digits =
       ev->getValidHandle<std::vector<raw::RawDigit> >(digit_tag);
 
@@ -53,8 +54,10 @@ void SBNDRawDigit::slice(gallery::Event* ev, larcv3::IOManager & io) {
     int this_column = column(channel);
 
     // Loop over the digit and compress it:
-    for (size_t i_row = tick_offset; i_row < n_ticks_per_chamber + tick_offset; i_row++) {
+    for (size_t i_row = tick_offset; i_row < n_ticks_per_chamber + tick_offset ; i_row++) {
       int this_row = row(i_row, channel) / compression;
+     // std::cout<<"I row" << i_row << std::endl;
+     // std::cout<<"This row "<< this_row << std::endl;
       float val =
           (digit.ADC(i_row) - digit.GetPedestal()) / (1.0 * compression);
       if (this_row < _base_image_meta_2D.at(this_projection_id).rows() &&
