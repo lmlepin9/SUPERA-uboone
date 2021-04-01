@@ -1,0 +1,11 @@
+#include "geometry_microboone.fcl"
+#include "larproperties_microboone.fcl"
+#include "detectorclocks_microboone.fcl"
+#include "detectorproperties_microboone.fcl"
+
+services: {
+  Geometry:                       @local::microboone_geo
+  LArPropertiesService:           @local::microboone_properties
+  DetectorClocksService:          @local::microboone_detectorclocks
+  DetectorPropertiesService:      @local::microboone_detproperties
+}
