@@ -5,7 +5,7 @@
 
 #include "nusimdata/SimulationBase/MCTruth.h"
 
-#include "sbnd_rawdigit.h"
+#include "uboone_rawdigit.h"
 
 namespace supera {
 
