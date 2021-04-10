@@ -45,7 +45,7 @@ SuperaModuleBase::SuperaModuleBase() {
         _base_image_meta_2D[plane].set_dimension(1, 0.055*total_ticks, total_ticks/compression );
         _base_image_meta_2D[plane].set_projection_id(plane);
     }   // 0.078 is the default value for SBND, from the uboone CNN paper it is 0.055, need to check this though. 
-
+        // Time2cm from uboone detector services:  0.0548965
 
 }
 
