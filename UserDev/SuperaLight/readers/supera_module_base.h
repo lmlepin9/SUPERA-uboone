@@ -92,7 +92,7 @@ protected:
 
     std::string _name;
 
-    std::string _fcl_file_name = "/uboone/app/users/lmoralep/gallery/gallery-framework/core/LArUtil/dat/services_microboone.fcl";
+    std::string _fcl_file_name = "/software/SUPERA-uboone/core/LArUtil/dat/services_microboone.fcl";
 
     std::vector<larcv3::ImageMeta2D> _base_image_meta_2D;
     larcv3::ImageMeta3D _base_image_meta_3D;
