@@ -82,10 +82,10 @@ void ubooneCluster::build_particle_map(gallery::Event* ev, larcv3::IOManager & i
 
   for (auto& shower : *mcshowers) {
     larcv3::Particle part;
-    std::cout<<"Shower ID: " <<  shower.TrackID() << std::endl;
-    std::cout<<"Shower PDG: " <<  shower.PdgCode() << std::endl;
-    std::cout<<"Shower origin (nu code): " <<  shower.Origin() << std::endl;
-    std::cout<<"Shower Parent ID: " <<  shower.AncestorTrackID() << std::endl;
+    //std::cout<<"Shower ID: " <<  shower.TrackID() << std::endl;
+    //std::cout<<"Shower PDG: " <<  shower.PdgCode() << std::endl;
+    //std::cout<<"Shower origin (nu code): " <<  shower.Origin() << std::endl;
+    //std::cout<<"Shower Parent ID: " <<  shower.AncestorTrackID() << std::endl;
     part.id(id);
     part.mcst_index(          shower.TrackID());
 
@@ -158,10 +158,10 @@ void ubooneCluster::slice(gallery::Event* ev, larcv3::IOManager & io) {
     i++;
   }
 
-  std::cout << "number of clusters per projection:" << std::endl;
-  std::cout << _clusters_by_projection[0].size() << std::endl;
-  std::cout << _clusters_by_projection[1].size() << std::endl;
-  std::cout << _clusters_by_projection[2].size() << std::endl;
+  //std::cout << "number of clusters per projection:" << std::endl;
+ // std::cout << _clusters_by_projection[0].size() << std::endl;
+  //std::cout << _clusters_by_projection[1].size() << std::endl;
+  //std::cout << _clusters_by_projection[2].size() << std::endl;
 
 
   // larcv3::ClusterVoxel3D clusters3d;
@@ -198,8 +198,8 @@ void ubooneCluster::slice(gallery::Event* ev, larcv3::IOManager & io) {
         if (ide.trackID == -1){
           continue;
         }
-         std::cout << "TDC: " << tdc <<  std::endl;
-         std::cout << "Track ID: " << ide.trackID << std::endl;
+         //std::cout << "TDC: " << tdc <<  std::endl;
+         //std::cout << "Track ID: " << ide.trackID << std::endl;
         // Add this ide to the proper particle in 3D:
         int this_particle = ide.trackID;
         int larcv_particle_id;
@@ -216,11 +216,11 @@ void ubooneCluster::slice(gallery::Event* ev, larcv3::IOManager & io) {
         auto index = _base_image_meta_3D.position_to_index(pos_3d);
         _3d_clusters.writeable_voxel_set(larcv_particle_id).add(larcv3::Voxel(index, ide.energy));
         if (ide.x > 13.3 && ide.x < 13.4){
-            std::cout << " Current size, index: " << _3d_clusters.voxel_set(0).size()
-                      << ", " << index << std::endl;
-            std::cout << "  X coordinate: " << _base_image_meta_3D.position_to_coordinate(ide.x, 0) << "\n";
-            std::cout << "  Y coordinate: " << _base_image_meta_3D.position_to_coordinate(ide.y, 1) << "\n";
-            std::cout << "  Y coordinate: " << _base_image_meta_3D.position_to_coordinate(ide.z, 2) << "\n";
+            //std::cout << " Current size, index: " << _3d_clusters.voxel_set(0).size()
+            //          << ", " << index << std::endl;
+            //std::cout << "  X coordinate: " << _base_image_meta_3D.position_to_coordinate(ide.x, 0) << "\n";
+            //std::cout << "  Y coordinate: " << _base_image_meta_3D.position_to_coordinate(ide.y, 1) << "\n";
+            //std::cout << "  Y coordinate: " << _base_image_meta_3D.position_to_coordinate(ide.z, 2) << "\n";
         }
 
       int tick = row(tdc, ch.Channel());

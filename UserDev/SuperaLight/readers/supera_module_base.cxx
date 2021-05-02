@@ -36,11 +36,11 @@ SuperaModuleBase::SuperaModuleBase() {
     _base_image_meta_2D.resize(3);
     // Set the total ticks per image:
     total_ticks = n_ticks_per_chamber + n_cathode_ticks;
-    std::cout << "Total ticks: " << total_ticks << std::endl; 
+    //std::cout << "Total ticks: " << total_ticks << std::endl; 
     for (size_t plane = 0; plane < 3; plane ++){
         // For the first dimension, x, we need the number of wires:
         int n_wires = _geo_service->Nwires(plane, 0);
-        std::cout<<"Plane: " << plane <<" Number of wires: " << n_wires << std::endl;
+        //std::cout<<"Plane: " << plane <<" Number of wires: " << n_wires << std::endl;
         _base_image_meta_2D[plane].set_dimension(0, 0.3*_geo_service->Nwires(plane), _geo_service->Nwires(plane));
         _base_image_meta_2D[plane].set_dimension(1, 0.055*total_ticks, total_ticks/compression );
         _base_image_meta_2D[plane].set_projection_id(plane);
@@ -112,7 +112,7 @@ float SuperaModuleBase::tick_position(float x, float time_offset, int projection
     // (Add an offset for the distance between planes)
     float tick = x / larutil::GeometryHelper::GetME()->TimeToCm();
 
-    std::cout << "Tick : " << tick << std::endl;
+    //std::cout << "Tick : " << tick << std::endl;
 
     if (x > 0){
       tick -= 7;
@@ -140,7 +140,7 @@ float SuperaModuleBase::tick_position(float x, float time_offset, int projection
     // Accomodate the central x=0 position:
     tick += n_ticks_per_chamber;
 
-    std::cout << "Tick : " << tick << std::endl;
+   // std::cout << "Tick : " << tick << std::endl;
 
 
     // Apply compression:
