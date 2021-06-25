@@ -12,7 +12,7 @@ namespace supera {
 bool supera_light::initialize() {
 
   raw_digit.initialize();
-  wire.initialize();
+  //wire.initialize();
   cluster.initialize();
 
   return true;
@@ -31,7 +31,7 @@ bool supera_light::analyze(gallery::Event* ev) {
   int subrun = ev->eventAuxiliary().subRun();
   int event = ev->eventAuxiliary().event();
 
-  raw_digit.slice(ev, _io);
+  //raw_digit.slice(ev, _io);
   wire.slice(ev, _io);
   cluster.slice(ev, _io);
 

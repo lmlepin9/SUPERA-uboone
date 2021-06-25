@@ -36,7 +36,7 @@ SuperaModuleBase::SuperaModuleBase() {
     _base_image_meta_2D.resize(3);
     // Set the total ticks per image:
     total_ticks = n_ticks_per_chamber + n_cathode_ticks;
-    //std::cout << "Total ticks: " << total_ticks << std::endl; 
+    std::cout << "Compression factor: " << compression << std::endl; 
     for (size_t plane = 0; plane < 3; plane ++){
         // For the first dimension, x, we need the number of wires:
         int n_wires = _geo_service->Nwires(plane, 0);

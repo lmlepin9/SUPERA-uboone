@@ -187,7 +187,7 @@ void ubooneCluster::slice(gallery::Event* ev, larcv3::IOManager & io) {
 
       int tdc = tdc_pre - 4900; // This TDC is hard coded and set by eye. What should be the real value for this? 
                                 // 4900 is the number that I obtained from the uboone timing doc 
-
+      //tdc /= compression; 
       for (auto& ide : ides) {
 
 
@@ -235,7 +235,7 @@ void ubooneCluster::slice(gallery::Event* ev, larcv3::IOManager & io) {
         //             << std::endl;
         // }
 
-
+      tick /= compression;
         // map the tdc to a row:
         coord_2d[1] = tick; coord_2d[0] = this_column;
         index = _base_image_meta_2D.at(this_projection_id).index(coord_2d);

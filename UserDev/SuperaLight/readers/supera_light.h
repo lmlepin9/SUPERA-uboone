@@ -67,7 +67,7 @@ class supera_light : galleryfmwk::ana_base {
   int column(int channel);
   int row(int tick, int channel);
 
-  ubooneRawDigit raw_digit;
+  //ubooneRawDigit raw_digit;
   ubooneWire     wire;
   ubooneCluster  cluster;
   // std::vector<SuperaModuleBase*> _modules;

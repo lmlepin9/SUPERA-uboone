@@ -83,7 +83,7 @@ protected:
 
     int n_ticks_per_chamber =  7000;
     int n_cathode_ticks = 0; // This only applies to SBND 
-    int compression = 1;
+    int compression = 6;
     int tick_offset = 2400;
 
     int total_ticks = -1;
@@ -92,7 +92,7 @@ protected:
 
     std::string _name;
 
-    std::string _fcl_file_name = "/software/SUPERA-uboone/core/LArUtil/dat/services_microboone.fcl";
+    std::string _fcl_file_name = "/uboone/app/users/lmoralep/SUPERA-uboone/core/LArUtil/dat/services_microboone.fcl";
 
     std::vector<larcv3::ImageMeta2D> _base_image_meta_2D;
     larcv3::ImageMeta3D _base_image_meta_3D;
